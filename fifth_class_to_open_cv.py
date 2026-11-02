@@ -1,0 +1,21 @@
+import cv2
+import os
+imagestore1=cv2.imread(r'C:\Python\Python\open cv\vibrant image2.jpg')
+cv2.imshow('original image',imagestore1)
+cv2.waitKey(0)
+borderstore=cv2.copyMakeBorder(imagestore1,6,6,6,6,cv2.BORDER_CONSTANT,value=(255,255,255))
+cv2.imshow('borderd image',borderstore)
+cv2.waitKey(0)
+reflectiveborder=cv2.copyMakeBorder(imagestore1,30,30,30,30,cv2.BORDER_REFLECT)
+cv2.imshow('reflective borderd image' ,reflectiveborder)
+cv2.waitKey(0)       
+grayscaleimage=cv2.cvtColor(imagestore1,cv2.COLOR_BGR2GRAY)
+cv2.imshow('grayscale image',grayscaleimage)
+cv2.waitKey(0)
+hsv=cv2.cvtColor(imagestore1,cv2.COLOR_BGR2HSV)
+cv2.imshow('hsv image',hsv)
+cv2.waitKey(0)
+edge=cv2.Canny(imagestore1,100,300)
+cv2.imshow('canny image',edge)
+
+cv2.waitKey(0)
